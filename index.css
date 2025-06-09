@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.main {
+    text-align: center;
+    padding: 20px;
+}
+.header {
+    margin-bottom: 20px;
+}
+h1 {
+    font-size: 2.5rem;
+    color: #007BFF;
+}
+.hidden {
+    display: none !important;
+}
+#difficulty-selector h2 {
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+.difficulty-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+.difficulty-btn {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border: 2px solid #007BFF;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #007BFF;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+.difficulty-btn:hover {
+    background-color: #007BFF;
+    color: #fff;
+}
+.game-controls {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 400px;
+    margin: 15px auto;
+}
+#undo-btn {
+    padding: 8px 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #ffc107;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+#undo-btn:hover:not(:disabled) {
+    background-color: #e0a800;
+}
+#undo-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+.mistakes {
+    font-size: 1.2rem;
+    color: #dc3545;
+    font-weight: 600;
+}
+#gameboard {
+    height: 60vmin;
+    width: 60vmin;
+    max-height: 540px;
+    max-width: 540px;
+    background-color: #fff;
+    border: 3px solid #333;
+    margin: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.tile {
+    height: calc(100% / 9);
+    width: calc(100% / 9);
+    border: 1px solid #ccc;
+    font-size: clamp(1rem, 4vmin, 2rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    position: relative;
+}
+.tile.border-right {
+    border-right: 2px solid #333;
+}
+.tile.border-bottom {
+    border-bottom: 2px solid #333;
+}
+.tile:not(.tile-start):hover {
+    background-color: #e9ecef;
+}
+.tile.selected {
+    background-color: #cce5ff;
+    border: 2px solid #007BFF;
+}
+.tile.highlighted {
+    background-color: #e9ecef;
+}
+.tile.tile-start {
+    background-color: #f8f9fa;
+    color: #212529;
+    cursor: not-allowed;
+}
+
+.tile.error {
+    color: #dc3545;
+    background-color: #f8d7da;
+}
+#number-palette {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.number {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #007BFF;
+    border-radius: 8px;
+    margin: 0 5px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+.number:hover {
+    background-color: #007BFF;
+    color: #fff;
+}
+#erase-btn {
+    border-color: #6c757d;
+}
+#erase-btn:hover {
+    background-color: #6c757d;
+    color: #fff;
+}
+#end-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+.end-screen-content {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.end-screen-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+#play-again-btn {
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+#play-again-btn:hover {
+    background-color: #218838;
+}
